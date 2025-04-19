@@ -1,88 +1,95 @@
-/* Reset and global styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-html,
 body {
-  width: 100%;
-  height: 100%;
-  background-color: #dceeff;
-  color: #333;
+  background-color: #f4f6f8;
 }
 
-/* Header styles */
-body h1 {
+/* Navbar */
+.navbar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: #5b5e61;
-  color: #fff;
-  padding: 20px 0;
-  height: 15%;
-  font-size: 2.5rem;
-  text-align: center;
+  justify-content: space-between;
+  background-color: #1e293b;
+  padding: 15px 30px;
+  color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-bottom: 3px solid #1565c0;
 }
 
-/* Container styles */
+.navbar-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.nav-btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Project Buttons Container */
 .container {
+  padding: 40px 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 85%;
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  align-items: center;
+  flex-direction: column;
 }
 
-/* Button container styles */
 .button-container {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  flex-direction: column;  /* Stacks the buttons vertically */
+  gap: 20px;  /* Adds space between buttons */
+  max-width: 400px; /* Restricts the width to make it look neat */
   width: 100%;
-  max-width: 500px;
+  margin-top: 20px;
+  padding: 20px;
 }
 
-/* Link styles */
-.button-container a {
+/* Button Styles */
+.project-button {
   text-decoration: none;
-  width: 100%;
 }
 
-/* Button styles */
-.button-container button {
-  padding: 15px 20px;
+.project-button button {
+  padding: 14px 20px;
   font-size: 1.1rem;
-  color: #fff;
-  background-color: #42a5f5;
+  background-color: #4f46e5;
+  color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
   width: 100%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, background-color 0.3s;
 }
 
-.button-container button:hover {
-  background-color: #1e88e5;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+.project-button button:hover {
+  background-color: #4338ca;
+  transform: translateY(-5px); /* Hover effect */
 }
 
-.button-container button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+.project-button button:active {
+  transform: translateY(2px); /* Slight press-down effect */
 }
 
-.button-container button:focus {
+.project-button button:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(66, 165, 245, 0.5);
+  box-shadow: 0 0 10px rgba(72, 85, 99, 0.5); /* Focus effect */
 }
