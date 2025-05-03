@@ -7,6 +7,8 @@
 
 body {
   background-color: #f4f6f8;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Navbar */
@@ -18,14 +20,18 @@ body {
   padding: 15px 30px;
   color: #ffffff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+  height: 70px;
 }
 
 .navbar-title {
   font-size: 1.8rem;
   font-weight: bold;
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
+  flex-grow: 1;
 }
 
 .nav-btn {
@@ -33,7 +39,7 @@ body {
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 6px;
+  border-radius: 40px;
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s;
@@ -43,26 +49,42 @@ body {
   background-color: #1d4ed8;
 }
 
-/* Project Buttons Container */
-.container {
-  padding: 40px 20px;
+/* Main body wrapper */
+.main_body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  padding: 30px 20px;
+  /* background: linear-gradient(90deg , #275481, #e2e8f0); */
+  background: linear-gradient(180deg , #868686, #b4b4b4);
+  height: calc(100vh - 70px);
 }
 
+/* Container that scrolls */
+.container {
+  max-width: 500px;
+  width: 100%;
+  max-height: 500px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 20px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Buttons container */
 .button-container {
   display: flex;
-  flex-direction: column;  /* Stacks the buttons vertically */
-  gap: 20px;  /* Adds space between buttons */
-  max-width: 400px; /* Restricts the width to make it look neat */
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
-  margin-top: 20px;
-  padding: 20px;
 }
 
-/* Button Styles */
+/* Button styling */
 .project-button {
   text-decoration: none;
 }
@@ -73,23 +95,40 @@ body {
   background-color: #4f46e5;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 40px;
   cursor: pointer;
-  text-align: center;
   width: 100%;
   transition: transform 0.3s, background-color 0.3s;
 }
 
 .project-button button:hover {
   background-color: #4338ca;
-  transform: translateY(-5px); /* Hover effect */
+  transform: translateY(-4px);
 }
 
 .project-button button:active {
-  transform: translateY(2px); /* Slight press-down effect */
+  transform: translateY(2px);
 }
 
 .project-button button:focus {
   outline: none;
-  box-shadow: 0 0 10px rgba(72, 85, 99, 0.5); /* Focus effect */
+  box-shadow: 0 0 10px rgba(72, 85, 99, 0.5);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .container {
+    max-height: 70vh;
+  }
+
+  .project-button button {
+    font-size: 1rem;
+    padding: 12px;
+  }
 }
